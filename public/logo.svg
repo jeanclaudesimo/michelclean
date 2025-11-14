@@ -1,0 +1,19 @@
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sparkle/Clean Icon -->
+  <circle cx="30" cy="30" r="20" fill="#10b981" opacity="0.2"/>
+  <path d="M30 10 L32 22 L44 20 L34 28 L42 38 L30 34 L18 38 L26 28 L16 20 L28 22 Z" fill="#10b981"/>
+  <circle cx="30" cy="30" r="3" fill="#ffffff"/>
+
+  <!-- Text -->
+  <text x="55" y="32" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#3a4b7c">
+    Michel
+  </text>
+  <text x="140" y="32" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#10b981">
+    Clean
+  </text>
+
+  <!-- Tagline -->
+  <text x="58" y="46" font-family="Arial, sans-serif" font-size="9" fill="#6b7280" letter-spacing="1">
+    REINIGUNGSDIENSTE
+  </text>
+</svg>

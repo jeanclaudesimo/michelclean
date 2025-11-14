@@ -1,0 +1,22 @@
+{
+  "name": "MichelClean - Reinigungsdienste",
+  "short_name": "MichelClean",
+  "description": "Professionelle Reinigungsdienste in Köln - 24/7 verfügbar",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3a4b7c",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="300" height="100" viewBox="0 0 300 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- High-resolution logo for invoices and documents -->
+
+  <!-- Sparkle/Clean Icon -->
+  <circle cx="50" cy="50" r="30" fill="#10b981" opacity="0.15"/>
+  <path d="M50 20 L54 40 L74 37 L58 50 L71 67 L50 59 L29 67 L42 50 L26 37 L46 40 Z" fill="#10b981"/>
+  <circle cx="50" cy="50" r="5" fill="#ffffff" stroke="#10b981" stroke-width="1"/>
+
+  <!-- Accent sparkles -->
+  <circle cx="35" cy="25" r="2" fill="#10b981" opacity="0.4"/>
+  <circle cx="65" cy="25" r="2" fill="#10b981" opacity="0.4"/>
+  <circle cx="70" cy="55" r="1.5" fill="#10b981" opacity="0.3"/>
+
+  <!-- Company Name -->
+  <text x="90" y="50" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="bold" fill="#3a4b7c">
+    Michel
+  </text>
+  <text x="210" y="50" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="bold" fill="#10b981">
+    Clean
+  </text>
+
+  <!-- Tagline -->
+  <text x="92" y="70" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#6b7280" letter-spacing="2">
+    PROFESSIONELLE REINIGUNGSDIENSTE
+  </text>
+
+  <!-- Contact info for invoices -->
+  <text x="92" y="88" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#9ca3af">
+    Tel: 0221 32022993 • team@michelclean.de • Köln
+  </text>
+</svg>
