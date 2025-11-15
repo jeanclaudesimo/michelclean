@@ -17,6 +17,8 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=traefik-net"
+
+      - "traefik.http.services.michelclean.loadbalancer.server.port=3005"
     
       # HTTP (Port 80) → Redirect auf HTTPS
       - "traefik.http.routers.michelclean-http.entrypoints=frontendsecure"
