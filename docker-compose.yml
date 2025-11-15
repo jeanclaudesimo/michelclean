@@ -17,33 +17,30 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=traefik-net"
-
-      # --- Service ---
-      - "traefik.http.services.michelclean.loadbalancer.server.port=3005"
-
-      # --- Middlewares ---
-      # Force HTTPS dans les requêtes internes
-      - "traefik.http.middlewares.michelclean-headers.headers.customrequestheaders.X-Forwarded-Proto=https"
-
-      # Redirection du domaine nu -> www (nom unique pour éviter conflits)
-      - "traefik.http.middlewares.michelclean-redirect-to-www.redirectregex.regex=^https?://michelclean\\.de(.*)"
-      - "traefik.http.middlewares.michelclean-redirect-to-www.redirectregex.replacement=https://www.michelclean.de$1"
-      - "traefik.http.middlewares.michelclean-redirect-to-www.redirectregex.permanent=true"
-
-      # --- Routers ---
-      # www.michelclean.de -> sert le site
-      - "traefik.http.routers.michelclean-www.entrypoints=frontendsecure"
-      - "traefik.http.routers.michelclean-www.rule=Host(`www.michelclean.de`)"
-      - "traefik.http.routers.michelclean-www.tls=true"
-      - "traefik.http.routers.michelclean-www.service=michelclean"
-      - "traefik.http.routers.michelclean-www.middlewares=michelclean-headers"
-
-      # michelclean.de -> redirection vers www
+    
+      # HTTP (Port 80) → Redirect auf HTTPS
+      - "traefik.http.routers.michelclean-http.entrypoints=frontendsecure"
+      - "traefik.http.routers.michelclean-http.rule=Host(`www.michelclean.de`)"
+      - "traefik.http.routers.michelclean-http.middlewares=michelclean-https"
+      
+      - "traefik.http.middlewares.michelclean-https.redirectscheme.scheme=https"
+    
+      # Redirect michelclean.de → www.michelclean.de
       - "traefik.http.routers.michelclean-root.entrypoints=frontendsecure"
       - "traefik.http.routers.michelclean-root.rule=Host(`michelclean.de`)"
+      - "traefik.http.routers.michelclean-root.middlewares=michelclean-www-redirect"
       - "traefik.http.routers.michelclean-root.tls=true"
-      - "traefik.http.routers.michelclean-root.middlewares=michelclean-redirect-to-www@docker"
-      - "traefik.http.routers.michelclean-root.service=noop@internal"
+    
+      - "traefik.http.middlewares.michelclean-www-redirect.redirectregex.regex=^https?://michelclean\\.de(.*)"
+      - "traefik.http.middlewares.michelclean-www-redirect.redirectregex.replacement=https://www.michelclean.de$1"
+      - "traefik.http.middlewares.michelclean-www-redirect.redirectregex.permanent=true"
+    
+      # HTTPS Router
+      - "traefik.http.routers.michelclean.entrypoints=frontendsecure"
+      - "traefik.http.routers.michelclean.rule=Host(`www.michelclean.de`)"
+      - "traefik.http.routers.michelclean.tls=true"
+      - "traefik.http.routers.michelclean.service=michelclean"
+
 
 networks:
   traefik-net:
