@@ -42,6 +42,7 @@ services:
       - "traefik.http.routers.michelclean.rule=Host(`www.michelclean.de`)"
       - "traefik.http.routers.michelclean.tls=true"
       - "traefik.http.routers.michelclean.service=michelclean"
+      - "traefik.http.routers.michelclean.tls.certresolver=leresolver"
 
 
 networks:
